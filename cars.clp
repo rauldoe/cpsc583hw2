@@ -16,8 +16,16 @@
 (defrule recommend-car
   (age ?a)
   (test (<= ?a 25)) ; test if age <= 25
-  (car ?car ?price ?)
-  (test (<= ?price 30000)) ; test if price <= $30,000
+  (car ?car ?price Red)
+  (test (<= ?price 30000)) 
 =>
-  (printout t " Recommeding " ?car crlf )
+  (printout t " Recommeding " ?car " for the Young Crowd" crlf )
+)
+
+(defrule recommend-car-for-older
+  (age ?a)
+  (test (> ?a 25)) ; test if age > 25
+  (car ?car ? White)
+=>
+  (printout t " Recommeding " ?car " for the Older Generation" crlf )
 )
