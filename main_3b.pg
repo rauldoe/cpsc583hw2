@@ -1,0 +1,12 @@
+car(honda, 18000, red).
+car(toyota, 18000, white).
+car(ford, 25000, red).
+car(acura, 50000, white).
+car(bmw, 60000, red).
+
+recommendcar(Age, Car):- Age > 25, car(Car, _, Color), Color = white.
+
+%output:
+%recommendcar(26, X)
+%X = toyota
+%X = acura
