@@ -1,3 +1,5 @@
+; Ken Hsu, Khoa Do
+
 (deffacts gandhis "some members of the Gandhi family"
   (parent Rajeev Indira)
   (parent Sanjay Indira)
@@ -18,6 +20,7 @@
   (printout t ?x " and " ?z " are siblings" crlf )
 )
 
+; Question 1a: Add one rule to family.clp to only print a list of all people who are parents (i.e., do not add/remove new facts).  
 (defrule get-parent
   (parent ? ?x)
 
@@ -33,6 +36,8 @@
   (printout t "Unique Parent: " ?x crlf)
 )
 
+; Question 1b: Add one rule to family.clp to print a list of all pairs of persons who are cousins and assert new facts of the form "(cousin Varun Rahul)". 
+; 	Two persons are cousins if their parents are siblings. (You do not have to prevent duplicate pairs.) 
 (defrule cousin
   (parent ?x ?y)
   (parent ?z&~?x ?a&~?y)

@@ -1,3 +1,5 @@
+; Ken Hsu, Khoa Do
+
 (deffacts cars "some cars: Brand Price Color"
   (car Honda 18000 Red)
   (car Toyota 18000 White)
@@ -13,6 +15,7 @@
   (assert (age =(read)))  ; Read answer and add it as a fact
 )
 
+; Question 2a: Modify the rule such that the recommendation for a person younger than 25 years of  age is a car that costs less than $30,000 and red in color.
 (defrule recommend-car
   (age ?a)
   (test (<= ?a 25)) ; test if age <= 25
@@ -22,6 +25,7 @@
   (printout t " Recommeding " ?car " for the Young Crowd" crlf )
 )
 
+; Question 2b: Add a new rule that recommends for a person older than 25 years a white car. 
 (defrule recommend-car-for-older
   (age ?a)
   (test (> ?a 25)) ; test if age > 25

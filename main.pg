@@ -1,8 +1,12 @@
+% Ken Hsu, Khoa Do
 car(honda, 18000, red).
 car(toyota, 18000, white).
 car(ford, 25000, red).
 car(acura, 50000, white).
 car(bmw, 60000, red).
 
+% Question 3a: Modify the rule such that the recommendation for a person younger than 25 years is a car that costs less than $30,000 and red in color. 
 recommendcar(Age, Car) :- Age =< 25, car(Car, Cost, red), Cost =< 30000.
+
+% Question 3b: Change the program such that recommendation for a person older than 25 years is a  white car.
 recommendcarolder(Age, Car) :- Age > 25, car(Car, Cost, white).
